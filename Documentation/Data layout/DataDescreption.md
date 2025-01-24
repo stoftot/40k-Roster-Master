@@ -11,7 +11,6 @@ link: link to the faction on wahapedia
 
 
 ## Source
-##### This tabel is irelevant for the application
 Has the information on where the different rules and other stuff on wahapedia is from.
 
 only the following fields, are relevant
@@ -69,7 +68,7 @@ parameter: the paramter of the ability if its applicable
 ## Datasheets_keywords.csv
 Has the information on what keywords wich models on a datasheet has, both regular and faction.
 
-datasheet_id: the id of the datasheet, connected to the datasheet tabel
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
 keyword: the keyword
 model: what models on the datasheet a keyword is applicable for. 
 ![alt text](image-6.png)
@@ -79,7 +78,7 @@ is_faction_keyword: a bool if its a faction keyword or not.
 ## Datasheets_models.csv
 Has the information on the stats of the models in a datasheet, most of the time there is only one type of model but ther can acure multipel.
 
-datasheet_id: the id of the datasheet, connected to the datasheet tabel
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
 line: at what line the models info is displayed at, starting at 1
 ![alt text](image-7.png)
 name: the name of the model
@@ -99,98 +98,134 @@ base_size_descr: the descreption of the base size
 ## Datasheets_options.csv
 This describes the avilable, wargear for a datasheet
 
-datasheet_id
-line
-button
-description
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+line: the line its displayed at
+button: the icon for the line
+description: the descreption for the line, in html format
+![alt text](image-9.png)
 
 
 ## Datasheets_wargear.csv
-datasheet_id
-line
-line_in_wargear
-dice
-name
-description
-range
-type
-A
-BS_WS
-S
-AP
-D
+This table describes the diffrent wargear a given datasheet has access to
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+line: at what line the wargear is at, starting at 1
+line_in_wargear: for wargear that has different options, starting at 1
+![alt text](image-10.png)
+dice: if dice is required to chose the wargear option
+![alt text](image-11.png)
+name: the name of the wargear
+description: the rules of the wargear, mostly keywords, written in html format
+range: range of the wargear, "Melee" if its melee
+type: the weagear type, "Ranged" or "Melee"
+A: number of attacks
+BS_WS: Balistic skill for ranged weapons and weapon skill for melee
+S: streght characteristc of the wargear
+AP: armor penetration characteristc of the wargear
+D: the damage characteristc of the wargear
+![alt text](image-12.png)
 
 
 ## Datasheets_unit_composition.csv
-datasheet_id
-line
-description
+This table describes the unit composition for a given datasheet
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+line: at what line its displayed at starting at 1
+description: the unit composition
+![alt text](image-13.png)
 
 
 ## Datasheets_models_cost.csv
-datasheet_id
-line
-description
-cost
+This table describes what the model combination and cost is for a given datasheet
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+line: at what line its displayed at starting at 1
+description: model descreption
+cost: the models cost
+![alt text](image-14.png)
 
 
 ## Datasheets_stratagems.csv
-datasheet_id
-stratagem_id
+This table describes what stratagems a given datasheet has acces to
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+stratagem_id the id of the stratagem, refferencing the stratagem table
 
 
 ## Datasheets_enhancements.csv
-datasheet_id
-enhancement_id
+This table describes what enhacmnets a given datasheet has access to
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+enhancement_id: the id of the enhacement, refferencing the enhancment table
+![alt text](image-20.png)
 
 
 ## Datasheets_detachment_abilities.csv
-datasheet_id
-detachment_ability_id
+This table describes what detachment abilities a datasheet has accses to
+
+datasheet_id: the id of the datasheet, refferencing the datasheet tabel 
+detachment_ability_id: the id of the detachment ability, refferencing the detachment ability tabel
+![alt text](image-15.png)
+
 
 ## Datasheets_leader.csv
-datasheet_id
-attached_datasheet_id
+This table describes what units can lead which units
+
+datasheet_id: the datasheet id of the leader, refferencing the datasheet table 
+attached_datasheet_id: the datasheet id of the unit it can lead, refferencing the datasheet table
+![alt text](image-16.png)
+use it the other way around to get the led by relation.
+![alt text](image-17.png)
 
 
 ## Stratagems.csv
-id
-faction_id
-name
-type
-cp_cost
-legend
-turn
-phase
-description
-detachment
+This table describes the diffrent strategems there is in detachment
+
+id: the id of the stratagem
+faction_id: the faction id, refferencing the faction table, if this is empty, its a core stratagem
+name: the name of the stratagem, in all caps
+type: the type of the stragem on the following format "\<name of the detachment\> - \<the actual type of the stratagem\>"
+cp_cost: the cp cost of the strategme
+legend: fluff text irelevant
+turn: In what turn the strategem can be used, "Your turn", "Either player’s turn", "Opponent’s turn"
+phase: what phase the stratagem can be used in "Command phase", "Shooting phase", "Fight phase", "Movement phase", "Charge phase"
+description: the descreption of what the stragem does, written in html format.
+detachment: The name of the detacmneht the stratgem is attached to
 
 
 ## Abilities.csv
-id
-name
-legend
-faction_id
-description
+This table describes the faction abillities, there are multipel abillities that have the same id, thus making the primary key the id and the faction_id
+![alt text](image-19.png)
+
+id: the id of the billity
+name: the name of the abillity
+legend: fluff text
+faction_id: the id of the connected faction, refferencing the faction table
+description: the descreption of the abillity
 
 
 ## Enhancements.csv
-id
-faction_id
-name
-legend
-description
-cost
-detachment
+This table describes the diffrent enhacmnet that can be choseed for the diffrent detachments
+
+id: the id of the enhacment
+faction_id: the id of the faction the ehancment is connected to, refferencing the faction table
+name: the name of the enhacmnet
+legend: fluff text
+description: descrpetion of what the enhacmnet does, written in  html format
+cost: the points cost of the enhacmnet
+detachment: the detachment its connected to
 
 
 ## Detachment_abilities.csv
-id
-faction_id
-name
-legend
-description
-detachment
+This table describes the abilities of the different detachments
+
+id: the id of the detachment
+faction_id: the of the connected faction, reffrecing the faction table
+name: the name of the detachment abillity
+legend: fluff text
+description: what the detachment does, written in html format
+detachment: the name of the detachment, there can be multipel
+![alt text](image-18.png)
 
 
 ## Last_update.csv
