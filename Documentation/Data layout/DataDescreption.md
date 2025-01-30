@@ -179,7 +179,7 @@ use it the other way around to get the led by relation.
 
 
 ## Stratagems.csv
-This table describes the diffrent strategems there is in detachment
+This table describes the diffrent strategems there is in a detachment
 
 id: the id of the stratagem
 faction_id: the faction id, refferencing the faction table, if this is empty, its a core stratagem
@@ -224,7 +224,7 @@ faction_id: the of the connected faction, reffrecing the faction table
 name: the name of the detachment abillity
 legend: fluff text
 description: what the detachment does, written in html format
-detachment: the name of the detachment, there can be multipel
+detachment: the name of the detachment, there can be multipel with the same name
 ![alt text](image-18.png)
 
 

@@ -1,0 +1,64 @@
+@startuml
+'missing fation abilities'
+class Faction {
+    String name
+    String wahpediaLink
+    List<Detachments>
+    List<Datasheets>
+}
+
+Faction --> Detachment
+Faction --> Datasheet
+
+class Detachment {
+    String name
+    List<Stratgems>
+    List<Enhacments>
+    List<DetachmentAbillity>
+}
+
+Detachment --> Stratagem
+Detachment --> Enhacment
+Detachment --> DetachmentAbillity
+
+class DetachmentAbillity  {
+    String name
+    String descreption
+}
+
+class Stratagem {
+    String name
+    StratagemType type
+    int cpCost
+    TurnType turnToBeUsed
+    List<Phase> phasesToBeUsed
+    String descreption
+}
+
+Stratagem --> StratagemType
+Stratagem --> TurnType
+Stratagem --> Phase
+
+Enum StratagemType {
+
+}
+
+Enum TurnType {
+
+}
+
+Enum Phase {
+    
+}
+
+class Enhacment {
+    String name
+    String descreption
+    int pointsCost
+}
+
+class Datasheet {
+
+}
+
+@enduml
