@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\..\Shared_Code\Models\Models.csproj", "{ECB9958D-4A2C-4272-B0E4-437D5CAF1759}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "..\..\Shared_Code\Enums\Enums.csproj", "{DB96A372-0327-4BB3-B441-43700469FBCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{ECB9958D-4A2C-4272-B0E4-437D5CAF1759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECB9958D-4A2C-4272-B0E4-437D5CAF1759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECB9958D-4A2C-4272-B0E4-437D5CAF1759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB96A372-0327-4BB3-B441-43700469FBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB96A372-0327-4BB3-B441-43700469FBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB96A372-0327-4BB3-B441-43700469FBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB96A372-0327-4BB3-B441-43700469FBCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
