@@ -1,0 +1,77 @@
+@startuml
+
+class Factioncreater {
+    FactionsLoader FactionLoader
+    DetachmentCreater DetachmentCreater
+}
+
+/'
+Factions.csv
+id = id
+name = name
+whapediaLink = link
+'/
+class FactionsLoader {
+    List<FactionModel>
+}
+
+
+class DetachmentCreater {
+    StratagemsLoader StratagemsLoader
+    EnhancementsLoader EnhancementsLoader
+    DetachmentAbilitiesLoader DetachmentAbilitiesLoader
+}
+
+
+/'
+Stratagems.csv
+id = id
+name = name
+type = type
+cpCost = cp_cost
+turnToBeUsed = turn
+phasesToBeUsed = phase
+description = description
+detachmentId = detachment
+'/
+class StratagemsLoader {
+    List<StratagemModel>
+}
+
+/'
+Enhancements.csv
+id = id
+name = name
+desctiption = description
+pointscost = cost
+detachmentId = detachment
+'/
+class EnhancementsLoader {
+    List<EnhacementModel>
+}
+
+/'
+Detachment_abilities.csv
+id = id
+name = name
+descreption = description
+detachment = detachment
+'/
+class DetachmentAbilitiesLoader {
+    List<DetachmentModel>
+}
+
+
+Enum StratagemType {
+
+}
+
+Enum TurnType {
+
+}
+
+Enum Phase {
+    
+}
+
+@enduml

@@ -1,16 +1,19 @@
 @startuml
-'missing fation abilities'
-class Faction {
+'missing fation abilities, no way as of right know to include it'
+class FactionModel {
+    String id
     String name
     String wahpediaLink
     List<Detachments>
     List<Datasheets>
 }
 
-Faction --> Detachment
-Faction --> Datasheet
+FactionModel --> Detachment
+FactionModel --> Datasheet
 
-class Detachment {
+class DetachmentModel {
+    String Id
+    FactionModel Faction
     String name
     List<Stratgems>
     List<Enhacments>
@@ -21,12 +24,16 @@ Detachment --> Stratagem
 Detachment --> Enhacment
 Detachment --> DetachmentAbillity
 
-class DetachmentAbillity  {
+class DetachmentAbillityModel  {
+    String id
+    String DetachmentId
     String name
     String descreption
 }
 
 class Stratagem {
+    String id
+    String DetachmentId
     String name
     StratagemType type
     int cpCost
@@ -52,6 +59,8 @@ Enum Phase {
 }
 
 class Enhacment {
+    String id
+    String DetachmentId
     String name
     String descreption
     int pointsCost
