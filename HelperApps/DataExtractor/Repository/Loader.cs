@@ -93,7 +93,7 @@ public abstract class Loader<T>
         File.Move(TempFilePath, FilePath);
     }
 
-    public int CountLines()
+    private int CountLines()
     {
         var totalLines = File.ReadLines(FilePath).Count();
         return totalLines - 1;
