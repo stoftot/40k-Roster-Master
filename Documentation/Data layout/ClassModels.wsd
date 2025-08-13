@@ -1,5 +1,7 @@
 @startuml
-'missing fation abilities, no way as of right know to include it'
+/'missing fation abilities, no way as of right know to include it
+The way they are stored in the .csv file, some factiosn have some they shouldent have.
+f.eks. csm has oath of moment'/
 class FactionModel {
     String id
     String name

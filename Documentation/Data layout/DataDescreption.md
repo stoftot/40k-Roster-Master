@@ -195,6 +195,8 @@ detachment: The name of the detacmneht the stratgem is attached to
 
 ## Abilities.csv
 This table describes the faction abillities, there are multipel abillities that have the same id, thus making the primary key the id and the faction_id
+The data is stored weird where some factions have thngs they shouldent have, souch as csm having oath of momnet.
+It also stores abillities desceptions souch as stealth and firing deck, these dosent have a faction id
 ![alt text](image-19.png)
 
 id: the id of the billity
