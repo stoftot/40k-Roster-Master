@@ -20,8 +20,8 @@ class DetachmentModel {
     List<DetachmentAbillity>
 }
 
-Detachment --> Stratagem
-Detachment --> Enhacment
+Detachment --> StratagemModel
+Detachment --> EnhacmentModel
 Detachment --> DetachmentAbillity
 
 class DetachmentAbillityModel  {
@@ -31,7 +31,7 @@ class DetachmentAbillityModel  {
     String descreption
 }
 
-class Stratagem {
+class StratagemModel {
     String id
     String DetachmentId
     String name
@@ -42,9 +42,9 @@ class Stratagem {
     String descreption
 }
 
-Stratagem --> StratagemType
-Stratagem --> TurnType
-Stratagem --> Phase
+StratagemModel --> StratagemType
+StratagemModel --> TurnType
+StratagemModel --> Phase
 
 Enum StratagemType {
 
@@ -58,7 +58,7 @@ Enum Phase {
     
 }
 
-class Enhacment {
+class EnhacmentModel {
     String id
     String DetachmentId
     String name
