@@ -62,6 +62,13 @@ class DetachmentAbilitiesLoader {
 }
 
 
+'------------- datasheet related -------------
+class DatasheetCreater {
+
+}
+
+'---------------------------------------------
+
 Enum StratagemType {
 
 }

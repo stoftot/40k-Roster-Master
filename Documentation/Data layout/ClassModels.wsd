@@ -48,6 +48,56 @@ StratagemModel --> StratagemType
 StratagemModel --> TurnType
 StratagemModel --> Phase
 
+Class EnhacmentModel {
+    String id
+    String DetachmentId
+    String name
+    String descreption
+    int pointsCost
+}
+
+'------------- datasheet related -------------
+class DatasheetModel {
+    string id
+    string name
+    string factionId
+    Source source
+    DatasheetRole role
+    string loadout
+    
+}
+
+class DatasheetTransportModel : DatasheetModel {
+    string transport
+}
+
+class DatasheetLeaderModel : DatasheetModel {
+    string leader_footer
+}
+
+class DatasheetDamagbel : DatasheetModel {
+    string damaged_w
+    string damaged_descreption
+}
+
+DatasheetModel --> source
+DatasheetModel --> DatasheetRole
+
+class DatasheetAbilityModel {
+    string datasheet_id
+    short line
+}
+
+
+Enum Source {
+
+}
+
+Enum DatasheetRole {
+
+}
+'---------------------------------------------
+
 Enum StratagemType {
 
 }
@@ -59,17 +109,4 @@ Enum TurnType {
 Enum Phase {
     
 }
-
-class EnhacmentModel {
-    String id
-    String DetachmentId
-    String name
-    String descreption
-    int pointsCost
-}
-
-class Datasheet {
-
-}
-
 @enduml
